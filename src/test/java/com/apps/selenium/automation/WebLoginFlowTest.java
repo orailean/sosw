@@ -17,7 +17,6 @@ import com.apps.selenium.pageobjects.HomePage;
 import com.apps.selenium.util.LocalProperties;
 import com.apps.selenium.util.WebElements;
 import com.apps.selenium.util.WebFunctions;
-import com.sun.istack.internal.logging.Logger;
 
 /**
  * Tests pertaining to the login on c-date.de
@@ -30,7 +29,6 @@ public class WebLoginFlowTest {
 	WebDriver driver;
 	String baseUrl;
 
-	Logger logger = Logger.getLogger(WebLoginFlowTest.class);
 	LocalProperties localProperties = null;
 
 	@Before
@@ -43,7 +41,6 @@ public class WebLoginFlowTest {
 		baseUrl = localProperties.getValue("Base.URL");
 
 		String browser = localProperties.getValue("Web.Browser");
-		logger.info("Session browser: " + browser);
 		if ("firefox".equals(browser))
 			driver = new FirefoxDriver();
 		else if ("chrome".equals(browser)) {
@@ -56,9 +53,7 @@ public class WebLoginFlowTest {
 			throw new IllegalArgumentException("The Browser Type is Undefined");
 		}
 
-		logger.info("Opened driver session: " + driver.hashCode());
 		driver.get(baseUrl);
-		logger.info("URL: " + baseUrl);
 		assertEquals("Web Driver is not in the expected state: ",
 				"C-date: Casual Dating - Einfach zum Casual Date.",
 				driver.getTitle());
@@ -69,7 +64,6 @@ public class WebLoginFlowTest {
 	 * 
 	 */
 	public void close() {
-		logger.info("Closing driver session: " + driver.hashCode());
 		driver.quit();
 	}
 
@@ -78,11 +72,8 @@ public class WebLoginFlowTest {
 	 * 
 	 */
 	public void LoginWithValidEmailAndValidPassword() {
-		logger.info("Case: Login with valid email address and valid password.");
 		String emailFromUserInput = localProperties.getValue("User.Email");
 		String passwordFromUserInput = localProperties.getValue("User.Password");
-		logger.info("Login with [email,password] [" + emailFromUserInput + ","
-				+ passwordFromUserInput + "]");
 
 		HomePage homePage = new HomePage(driver);
 		homePage.login(emailFromUserInput, passwordFromUserInput);
@@ -98,11 +89,8 @@ public class WebLoginFlowTest {
 	 * 
 	 */
 	public void LoginWithValidEmailAndNotValidPassword() {
-		logger.info("Case: Login with valid email address and invalid password.");
 		String emailFromUserInput = localProperties.getValue("User.Email");
 		String passwordFromUserInput = WebFunctions.generateRandomString(15);
-		logger.info("Login with [email,password] [" + emailFromUserInput + ","
-				+ passwordFromUserInput + "]");
 
 		HomePage homePage = new HomePage(driver);
 		homePage.login(emailFromUserInput, passwordFromUserInput);
@@ -120,11 +108,8 @@ public class WebLoginFlowTest {
 	 * 
 	 */
 	public void LoginWithValidEmailAndEmptyPassword() {
-		logger.info("Case: Login with valid email address and empty password.");
 		String emailFromUserInput = localProperties.getValue("User.Email");
 		String passwordFromUserInput = "";
-		logger.info("Login with [email,password] [" + emailFromUserInput + ","
-				+ passwordFromUserInput + "]");
 
 		HomePage homePage = new HomePage(driver);
 		homePage.login(emailFromUserInput, passwordFromUserInput);
@@ -142,11 +127,8 @@ public class WebLoginFlowTest {
 	 * 
 	 */
 	public void LoginWithValidEmailAndShortPassword() {
-		logger.info("Case: Login with valid email address and less then 6 characters password.");
 		String emailFromUserInput = localProperties.getValue("User.Email");
 		String passwordFromUserInput = WebFunctions.generateRandomString(5);
-		logger.info("Login with [email,password] [" + emailFromUserInput + ","
-				+ passwordFromUserInput + "]");
 
 		HomePage homePage = new HomePage(driver);
 		homePage.login(emailFromUserInput, passwordFromUserInput);
