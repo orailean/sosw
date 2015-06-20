@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+	<Properties>
+		<Property name="log-path">logs</Property>
+	</Properties>
+	<Appenders>
+		<RollingFile name="RollingFile" fileName="${log-path}/cdate.log"
+			filePattern="${log-path}/cdate-%d{yyyy-MM-dd}-%i.log" >
+			<PatternLayout>
+				<pattern>%d{dd/MMM/yyyy HH:mm:ss,SSS}- %c{1}: %m%n</pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" modulate="true" />
+			</Policies>
+			<DefaultRolloverStrategy max="4"/>
+		</RollingFile>
+		<Console name="console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{dd/MMM/yyyy HH:mm:ss,SSS}- %c{1}: %m%n"/>
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Logger name="root" level="info" additivity="false">
+			<appender-ref ref="RollingFile" level="info"/>
+		</Logger>
+		<Root level="info" additivity="false">
+			<AppenderRef ref="RollingFile"/>
+			<appender-ref ref="console"/>
+		</Root>
+	</Loggers>
+</Configuration>
+

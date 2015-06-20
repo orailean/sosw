@@ -1,6 +1,7 @@
 .classpath
 .project
 .settings/
+logs/
 target/
 pom.xml.tag
 pom.xml.releaseBackup
