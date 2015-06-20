@@ -116,8 +116,8 @@ public class WebLoginFlowTest {
 		String expected = "Start";
 		String actual = driver.getTitle();
 
-		LOGGER.info("expected page title after login: " + expected);
-		LOGGER.info("actual page title after login: " + actual);
+		LOGGER.info("expected page title after login: 	" + expected);
+		LOGGER.info("actual page title after login: 	" + actual);
 
 		assertEquals(
 				"Login with valid email and password failed. The page title",
@@ -148,8 +148,8 @@ public class WebLoginFlowTest {
 		String actual = driver.findElement(
 				By.xpath(WebElements.LoginPage_ErrorBox_Xpath)).getText();
 
-		LOGGER.info("expected text in the error box: " + expected);
-		LOGGER.info("actual text in the error box: " + actual);
+		LOGGER.info("expected text in the error box: 	" + expected);
+		LOGGER.info("actual text in the error box: 		" + actual);
 
 		assertEquals(
 				"Login with valid email and invalid password didn't fail. The error text displayed",
@@ -179,8 +179,8 @@ public class WebLoginFlowTest {
 		String actual = driver.findElement(
 				By.xpath(WebElements.LoginPage_ErrorBox_Xpath)).getText();
 
-		LOGGER.info("expected text in the error box: " + expected);
-		LOGGER.info("actual text in the error box: " + actual);
+		LOGGER.info("expected text in the error box: 	" + expected);
+		LOGGER.info("actual text in the error box: 		" + actual);
 
 		assertEquals(
 				"Login with valid email and empty password didn't fail. The error text displayed",
@@ -211,8 +211,8 @@ public class WebLoginFlowTest {
 		String actual = driver.findElement(
 				By.xpath(WebElements.LoginPage_ErrorBox_Xpath)).getText();
 
-		LOGGER.info("expected text in the error box: " + expected);
-		LOGGER.info("actual text in the error box: " + actual);
+		LOGGER.info("expected text in the error box: 	" + expected);
+		LOGGER.info("actual text in the error box: 		" + actual);
 
 		assertEquals(
 				"Login with valid email and password less then 6 characters didn't fail. The error text displayed",
