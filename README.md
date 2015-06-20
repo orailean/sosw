@@ -12,13 +12,13 @@ The automated test cases:
 
 Following configurations have been tested:
 
-* Ubuntu jessie/sid Linux dev 3.13.0-24-generic #46-Ubuntu SMP Thu Apr 10 19:11:08 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
-** Apache Maven 2.2.1
-** Java version: 1.7.0_55
-** Mozilla Firefox 38.0
-** Google Chrome Version 43.0.2357.125 (64-bit)
+### Ubuntu jessie/sid Linux dev 3.13.0-24-generic #46-Ubuntu SMP Thu Apr 10 19:11:08 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
+* Apache Maven 2.2.1
+* Java version: 1.7.0_55
+* Mozilla Firefox 38.0
+* Google Chrome Version 43.0.2357.125 (64-bit)
 
-* Windows 7 Ultimate
+### Windows 7 Ultimate
 * Apache Maven 3.3.3
 * Java version: 1.7.0_71, vendor: Oracle Corporation
 * Mozilla Firefox 38.0.5
@@ -26,11 +26,17 @@ Following configurations have been tested:
 
 ## Installation
 
+GIT clone:
+```
 git clone https://github.com/orailean/automation
+```
 
 ## Tests
 
+Maven:
+```
 mvn clean test
+```
 
 ## Logging
 
