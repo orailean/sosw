@@ -83,7 +83,7 @@ public class WebLoginFlowTest {
 				"C-date: Casual Dating - Einfach zum Casual Date.",
 				driver.getTitle());
 	}
-	
+
 	@After
 	/**
 	 * Close the driver if initialized before.
@@ -119,8 +119,9 @@ public class WebLoginFlowTest {
 		LOGGER.info("expect: " + expected);
 		LOGGER.info("actual: " + actual);
 
-		assertEquals("Login with valid email and password failed: ", expected,
-				actual);
+		assertEquals(
+				"Login with valid email and password failed. The page title",
+				expected, actual);
 
 		LOGGER.info("test passed");
 	}
@@ -151,7 +152,7 @@ public class WebLoginFlowTest {
 		LOGGER.info("actual: " + actual);
 
 		assertEquals(
-				"Login with valid email and invalid password didn't fail: ",
+				"Login with valid email and invalid password didn't fail. The error text displayed",
 				expected, actual);
 
 		LOGGER.info("test passed");
@@ -181,7 +182,8 @@ public class WebLoginFlowTest {
 		LOGGER.info("expect: " + expected);
 		LOGGER.info("actual: " + actual);
 
-		assertEquals("Login with valid email and empty password didn't fail:",
+		assertEquals(
+				"Login with valid email and empty password didn't fail. The error text displayed",
 				expected, actual);
 
 		LOGGER.info("test passed");
@@ -213,7 +215,7 @@ public class WebLoginFlowTest {
 		LOGGER.info("actual: " + actual);
 
 		assertEquals(
-				"Login with valid email and password less then 6 characters didn't fail:",
+				"Login with valid email and password less then 6 characters didn't fail. The error text displayed",
 				expected, actual);
 
 		LOGGER.info("test passed");
