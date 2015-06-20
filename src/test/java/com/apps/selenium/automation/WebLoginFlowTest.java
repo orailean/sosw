@@ -36,7 +36,7 @@ import com.apps.selenium.util.WebFunctions;
 
 public class WebLoginFlowTest {
 
-	static WebDriver driver;
+	WebDriver driver;
 	String baseUrl;
 
 	LocalProperties localProperties = null;
