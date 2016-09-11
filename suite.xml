@@ -1,7 +1,7 @@
 <suite name="automation" verbose="2">
 <test name="sosw-task" verbose="2">
-    <packages>
-        <package name="com.apps.selenium.automation"/>
-    </packages>
+		<classes>
+			<class name="com.apps.selenium.automation.WebLoginFlow" />
+		</classes>
 </test>
 </suite>
