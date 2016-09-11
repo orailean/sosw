@@ -7,10 +7,12 @@ package com.apps.selenium.util;
  */
 public class WebElements {
 
-	public final static String HomePage_Email_ID = "email";
-	public final static String HomePage_Password_ID = "password";
-	public final static String HomePage_LoginBtn_ID = "loginBtn";
+	public static final String QUIZSTART_LOGIN_FB_BTN_XPATH = "//button[contains(@class,'fb')]";
+	
+	public static final String FBLOGIN_EMAIL_TXT_ID = "email";
+	public static final String FBLOGIN_PASSWORD_TXT_ID = "pass";
+	public static final String FBLOGIN_LOGIN_BTN_ID = "loginbutton";
 
-	public final static String LoginPage_ErrorBox_Xpath = "//div[contains(@class,'boxError')]/p";
+	public static final String QUIZRESULT_RESULTS_IMAGE_ID = "//img[contains(@src,'result_image')]";
 
 }

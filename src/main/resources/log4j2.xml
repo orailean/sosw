@@ -4,8 +4,8 @@
 		<Property name="log-path">logs</Property>
 	</Properties>
 	<Appenders>
-		<RollingFile name="RollingFile" fileName="${log-path}/cdate.log"
-			filePattern="${log-path}/cdate-%d{yyyy-MM-dd}-%i.log" >
+		<RollingFile name="RollingFile" fileName="${log-path}/output.log"
+			filePattern="${log-path}/output-%d{yyyy-MM-dd}-%i.log" >
 			<PatternLayout>
 				<pattern>%d{dd/MMM/yyyy HH:mm:ss,SSS}- %c{1}: %m%n</pattern>
 			</PatternLayout>
