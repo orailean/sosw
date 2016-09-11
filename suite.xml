@@ -1,0 +1,5 @@
+<test name="sosw-task" verbose="2">
+    <packages>
+        <package name="com.apps.selenium.automation"/>
+    </packages>
+</test>
